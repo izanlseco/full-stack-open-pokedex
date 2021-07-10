@@ -34,6 +34,6 @@ jobs:
           heroku_app_name: fso-pokedex-0202
           heroku_email: IzanLS09@gmail.com
           healthcheck: https://fso-pokedex-0202.herokuapp.com/health
-          checkstring: "ok"
+          checkstring: ok
           delay: 5
           rollbackonhealthcheckfailed: true
