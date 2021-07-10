@@ -14,6 +14,14 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - if: ${{ github.ref == 'refs/heads/master' }}
+        name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.33.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
