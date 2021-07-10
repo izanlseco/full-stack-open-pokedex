@@ -33,3 +33,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: fso-pokedex-0202
           heroku_email: IzanLS09@gmail.com
+          healthcheck: https://fso-pokedex-0202.herokuapp.com/health
+          checkstring: "ok"
+          delay: 5
+          rollbackonhealthcheckfailed: true
